@@ -1,0 +1,24 @@
+:root {
+  --brown-dark: #2b1e1a;
+  --brown-medium: #6b4f3f;
+  --brown-accent: #c8a27a;
+  --bg-warm: #faf7f4;
+  --text-main: #1f1f1f;
+  --text-muted: #7a6a60;
+  --border-light: #e6ddd6;
+}
+
+.discover{
+  margin-top: 40px;
+  font-weight: 800;
+  font-size: 1px;
+}
+.add-cart-button{
+  background-color: var(--brown-dark);
+  color: white;
+  height: 30px;
+  width: 180px;
+  margin-left: 30px;
+  margin-top: 5px;
+  border-radius: 15px;
+}
