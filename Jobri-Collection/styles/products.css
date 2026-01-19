@@ -8,6 +8,37 @@
   --border-light: #e6ddd6;
 }
 
+.cart a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cart-quantity {
+  position: absolute;
+  top: -20px;
+  right: 33px;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 50%;
+}
+@media (max-width: 768px) {
+  .cart {
+    order: 2;
+  }
+
+  .nav-left img {
+    order: 1;
+  }
+}
+
+
 .discover{
   margin-top: 40px;
   font-weight: 800;

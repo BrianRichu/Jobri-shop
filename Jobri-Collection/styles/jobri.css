@@ -363,8 +363,8 @@ body {
   }
 
   .top-product img {
-    height: 450px; /* critical */
-    width: 100%; 
+    height: 400px; /* critical */
+    width: 100%;
   }
 
   .product-name {
