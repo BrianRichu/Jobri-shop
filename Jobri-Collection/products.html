@@ -15,29 +15,56 @@
   <link rel="stylesheet" href="styles/products.css">
 </head>
 <body>
-  <header class="nav-container">
-  <div class="nav-left">
-    <a href="index.html"><img src="images/jobri logo.jpg" alt="Jobri Fashion Logo" /></a>
-  </div>
+  <header class="site-header">
+  <div class="nav-wrapper">
 
-  <div class="nav-middle">
-    <input type="search" placeholder="Search products..." />
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </div>
+    <!-- LOGO -->
+    <div class="nav-left">
+      <a href="index.html"><img src="images/jobri logo.jpg" alt="Jobri Collection Logo"></a>
+    </div>
 
-  <nav class="nav-right">
-    <ul>
-      <li><a href="#">Sneakers<i class="fa-solid fa-caret-down"></i></a></li>
-      <li><a href="#">Watches<i class="fa-solid fa-caret-down"></i></a></li>
-      <li><a href="#">Clothing<i class="fa-solid fa-caret-down"></i></a></li>
-      <li class="cart">
-        <a href="checkout.html" target="_blank"><i class="fa-solid fa-cart-shopping"></i>
-          <span class="cart-quantity js-cart-quantity">0</span>
-        <span>Cart</span></a>
-      </li>
-    </ul>
-  </nav>
-  </header>
+    <!-- SEARCH (ALWAYS VISIBLE) -->
+    <div class="nav-middle">
+      <input type="search" placeholder="Search products...">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <!-- DESKTOP NAV -->
+    <nav class="nav-right desktop-nav">
+      <ul>
+        <li><a href="#">Sneakers</a><i class="fa-solid fa-caret-down"></i></li>
+        <li><a href="#">Watches</a><i class="fa-solid fa-caret-down"></i></li>
+        <li><a href="#">Clothing</a><i class="fa-solid fa-caret-down"></i></li>
+        <li class="cart">
+          <a href="checkout.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>Cart</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MOBILE TOGGLE -->
+    <button class="menu-toggle" id="openMenu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+  </div>
+</header>
+
+<!-- MOBILE SLIDE MENU -->
+<aside class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" id="closeMenu">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+
+  <ul>
+    <li><a href="#">Sneakers</a><i class="fa-solid fa-caret-down"></i></li>
+    <li><a href="#">Watches</a><i class="fa-solid fa-caret-down"></i></li>
+    <li><a href="#">Clothing</a><i class="fa-solid fa-caret-down"></i></li>
+    <li><a href="checkout.html">Cart</a><i class="fa-solid fa-cart-shopping"></i></li>
+  </ul>
+</aside>
   
   <div class="top-products-section">
     <h1 class="discover">Quality & Affordable Items</h1>
@@ -93,6 +120,7 @@
     <p>&copy; 2026 Jobri Collection. All rights reserved.</p>
   </div>
   </footer>
+  <script src="scripts/index.js"></script>
   <script type="module" src="scripts/productsPage.js"></script>
 </body>
 </html>
