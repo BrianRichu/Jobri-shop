@@ -1,4 +1,4 @@
-export const cart = [
+export let cart = [
   {
     productId : 'p10',
     quantity : 1
@@ -30,4 +30,20 @@ export function addToCart(productId) {
       quantity: 1,
     });
   }
+}
+
+export function removeFromCart(productId){
+  //create new array
+  const newCart = [];
+
+  //loop through the cart
+  cart.forEach((cartItem) => {
+
+    //add the items into the new array expect the one we are deleting
+    if (cartItem.productId !== productId) {
+      newCart.push(cartItem);
+    }
+  })
+  //replace the old cart with the new cart
+  cart = newCart;
 }
