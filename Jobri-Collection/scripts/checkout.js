@@ -61,7 +61,7 @@ products.forEach((product)=>{
             
 
             <!-- DELIVERY OPTIONS -->
-            <div class="delivery-options">
+            <div class="delivery-options" data->
               <div class="delivery-options-title">
                 Choose a delivery option:
               </div>
@@ -71,7 +71,7 @@ products.forEach((product)=>{
                   type="radio"
                   checked
                   class="delivery-option-input"
-                  name="delivery-option-1"
+                  name="delivery-option-${matchingProduct.id}"
                 >
                 <div>
                   <div class="delivery-option-date">
@@ -87,7 +87,7 @@ products.forEach((product)=>{
                 <input
                   type="radio"
                   class="delivery-option-input"
-                  name="delivery-option-1"
+                  name="delivery-option-${matchingProduct.id}"
                 >
               <div>
                  
@@ -104,7 +104,7 @@ products.forEach((product)=>{
               <input
                 type="radio"
                 class="delivery-option-input"
-                name="delivery-option-1"
+                name="delivery-option-${matchingProduct.id}"
               >
               <div>
                 <div class="delivery-option-date">
