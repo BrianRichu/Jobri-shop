@@ -44,9 +44,6 @@
   font-weight: 800;
   font-size: 1px;
 }
-/* =========================
-   PRODUCT GRID – DEFAULT (DESKTOP)
-   ========================= */
 
 /* =========================
    PRODUCT GRID – DESKTOP
@@ -128,7 +125,7 @@
   }
 
   .top-product img {
-    height: 160px;
+    height: 200px;
   }
 
   .product-name {
