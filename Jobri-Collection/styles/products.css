@@ -93,6 +93,10 @@
   font-size: 14px;
   cursor: pointer;
 }
+.add-cart-button:active{
+  background-color: var(--brown-accent);
+  transition: 0.1s ease-in-out;
+}
 
 /* =========================
    TABLET (3 PER ROW)
