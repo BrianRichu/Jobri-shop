@@ -1,5 +1,15 @@
 import { cart , removeFromCart} from "../data/cart.js";
 import { products } from "../data/products.js";
+import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+
+// using dayjs external library to ensure the delivery days are upto date
+const today = dayjs();
+
+//.add takes two parameters first is the number you want to increase second is the value
+const deliveryDate = today.add(7 , 'days');
+
+//.format allows us to view the date in an easy to read format
+deliveryDate.format('dddd, MMMM D');
 
 
 let cartSummaryHTML = '';
