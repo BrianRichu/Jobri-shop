@@ -52,3 +52,17 @@ export function removeFromCart(productId){
 
   saveToLocalStorage();
 }
+//this function now updated the delivery date when page is refreshed
+export function updateDeliveryOption(productId, deliveryOptionId){
+  let matchingItem;
+
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      matchingItem = cartItem;
+    }
+  });
+
+  matchingItem.deliveryOptionId = deliveryOptionId;
+
+  saveToLocalStorage();
+}
