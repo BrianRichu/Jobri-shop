@@ -35,23 +35,12 @@ export function addToCart(productId) {
   saveToLocalStorage();
 }
 
-export function removeFromCart(productId){
-  //create new array
-  const newCart = [];
-
-  //loop through the cart
-  cart.forEach((cartItem) => {
-
-    //add the items into the new array expect the one we are deleting
-    if (cartItem.productId !== productId) {
-      newCart.push(cartItem);
-    }
-  })
-  //replace the old cart with the new cart
-  cart = newCart;
-
+export function removeFromCart(productId) {
+  cart = cart.filter(item => item.productId !== productId);
   saveToLocalStorage();
 }
+
+
 //this function now updated the delivery date when page is refreshed
 export function updateDeliveryOption(productId, deliveryOptionId){
   let matchingItem;

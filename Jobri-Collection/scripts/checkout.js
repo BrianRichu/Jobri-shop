@@ -136,6 +136,7 @@ function renderOrderSummary() {
       );
 
       container.remove();
+      renderOrderSummary();
     });
   });
 
