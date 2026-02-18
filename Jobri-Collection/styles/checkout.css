@@ -1,8 +1,10 @@
+body{
+  background-color: rgb(214, 214, 214);
+}
 .checkout-header {
   height: 60px;
   padding-left: 30px;
   padding-right: 30px;
-  background-color: white;
   display: flex;
   justify-content: center;
   margin-top: 50px;
@@ -131,7 +133,7 @@
 }
 
 .delivery-date {
-  color: rgb(0, 118, 0);
+  color: #1f1f1f;
   font-weight: 700;
   font-size: 19px;
   margin-top: 5px;
@@ -183,7 +185,7 @@
 }
 .link-primary{
   cursor: pointer;
-  color: rgb(89, 89, 252);
+  color: rgb(2, 2, 198);
 }
 .link-primary:active{
   color: brown;
@@ -225,7 +227,7 @@
 }
 
 .delivery-option-date {
-  color: rgb(0, 118, 0);
+  color: rgb(2, 2, 198);
   font-weight: 500;
   margin-bottom: 3px;
 }
@@ -276,9 +278,11 @@
   padding-top: 12px;
   padding-bottom: 12px;
   border-radius: 8px;
-
+  background-color: #2b1e1a;
+  color: white;
   margin-top: 11px;
   margin-bottom: 15px;
+  font-size: 18px;
 }
 
 /* =====================
