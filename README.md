@@ -8,53 +8,59 @@ The primary objective is full ownership of the platform—no outsourcing, no bla
 
 ## Live Preview
 
-Not deployed yet.
+This application is deployed and hosted on vercel.
+
+Live URL: https://jobri-shop.vercel.app/
 
 ## Core Features (Current)
 
-- Dynamic product rendering from JavaScript data  
-- Add-to-cart functionality  
-- Update item quantities  
-- Remove items from cart  
-- Delivery option selection  
-- Real-time order total calculation  
-- Responsive layout for desktop and mobile  
-- Modular JavaScript structure  
+- Dynamic product rendering from JavaScript data
+- Add-to-cart functionality
+- Update item quantities
+- Remove items from cart
+- Delivery option selection
+- Real-time order total calculation
+- Responsive layout for desktop and mobile
+- Modular JavaScript structure
 
 ## Tech Stack
 
 ### Current Stack
-- **HTML5** – Semantic structure  
-- **CSS3** – Styling and responsiveness  
-- **JavaScript (ES6)** – Application logic, state management, DOM manipulation  
+
+- **HTML5** – Semantic structure
+- **CSS3** – Styling and responsiveness
+- **JavaScript (ES6)** – Application logic, state management, DOM manipulation
 
 ### Planned Stack (Next Phase)
-- **React** – Component-based UI architecture  
-- **REST APIs** – Products, cart, orders, users  
-- **Backend (Node.js / Firebase)** – Data persistence and authentication  
-- **Payment API** – Secure checkout processing  
+
+- **React** – Component-based UI architecture
+- **REST APIs** – Products, cart, orders, users
+- **Backend (Node.js / Firebase)** – Data persistence and authentication
+- **Payment API** – Secure checkout processing
 
 ## Project Structure
 
 jobri-collection/  
 ├── data/  
-│   ├── products.js          – Product catalog  
-│   ├── cart.js              – Cart state and logic  
-│   └── deliveryOptions.js   – Shipping methods  
+│ ├── products.js – Product catalog  
+│ ├── cart.js – Cart state and logic  
+│ └── deliveryOptions.js – Shipping options
 ├── scripts/  
-│   ├── checkout/  
-│   │   ├── orderSummary.js  
-│   │   └── paymentSummary.js  
-│   └── main.js  
+│ ├── checkout/  
+│ │  ├── orderSummary.js  
+│ │  └── paymentSummary.js  
+| |__checkout.js
+│ |__ index.js
+| |__ productsPage.js  
 ├── styles/  
-│   └── jobri.css
-    |__ checkout.css  
-    |__ products.css
-├── images/    
+│  |__jobri.css
+|  |__checkout.css  
+|  |__products.css
+├── images/  
 ├── jobri.html  
 ├── checkout.html
 |__ products.html  
-└── README.md  
+└── README.md
 
 ## Application Flow
 
@@ -70,39 +76,34 @@ Clone the repository:
 
 git clone https://github.com/BrianRichu/jobri-shop.git
 
-Open `jobri.html` with live server in your browser to run the project. No build tools, dependencies, or backend services are required at this stage.
+Open `index.html` with live server in your browser to run the project. No build tools, dependencies, or backend services are required at this stage.
 
 ## Purpose of This Project
 
-- Build a strong foundation in core JavaScript before frameworks  
-- Understand eCommerce logic end-to-end  
-- Prepare a clean codebase for React migration  
-- Maintain full control of a real business platform  
+- Build a strong foundation in core JavaScript before frameworks
+- Understand eCommerce logic end-to-end
+- Prepare a clean codebase for React migration
+- Maintain full control of a real business platform
 
 ## Known Limitations (Current Phase)
 
-- No backend or database  
-- Cart resets on page refresh  
-- No authentication  
-- No payment gateway  
+- No backend or database
+- No authentication
+- No payment gateway
 
 These limitations are deliberate and will be addressed during the React + API phase.
 
 ## Roadmap
 
-- Refactor UI into React components  
-- Replace local data with API-driven data  
-- Implement persistent cart and user authentication  
-- Integrate payment gateway API  
-- Build admin dashboard for product management  
-- Deploy frontend and backend services  
+- Refactor UI into React components
+- Replace local data with API-driven data
+- Implement persistent cart and user authentication
+- Integrate payment gateway API
+- Build admin dashboard for product management
+- Deploy frontend and backend services
 
 ## Author
 
 Brian Mwangi  
 Frontend Web Developer  
 Founder — Jobri Collection
-
-## License
-
-This project is licensed under the MIT License.
