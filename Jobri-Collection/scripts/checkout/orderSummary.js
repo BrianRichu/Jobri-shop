@@ -122,7 +122,6 @@ export function renderOrderSummary() {
       );
 
       container.remove();
-      renderOrderSummary();
       renderPaymentSummary();
     });
   });
