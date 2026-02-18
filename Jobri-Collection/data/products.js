@@ -1,3 +1,16 @@
+export function getProduct(productId){
+  //this variable saves the result
+    let matchingProduct;
+
+    //loop through the products array. now we check if the product id from the products array equals the product id from our cart and save it to matchingProduct variable.
+    products.forEach((product) => {
+      if (product.id === productId) {
+        matchingProduct = product;
+      }
+    });
+    return matchingProduct;
+}
+
 export const products = [
   {
     id: "p24",

@@ -1,7 +1,8 @@
 import { cart, removeFromCart, updateDeliveryOption } from "../../data/cart.js";
-import { products } from "../../data/products.js";
+import { products , getProduct } from "../../data/products.js";
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
-import { deliveryOptions } from "../../data/deliveryOptions.js";
+import { deliveryOptions , getDeliveryOption } from "../../data/deliveryOptions.js";
+import { renderPaymentSummary } from "./paymentSummary.js";
 
 export function renderOrderSummary() {
   let cartSummaryHTML = "";
@@ -12,29 +13,14 @@ export function renderOrderSummary() {
     //this code below gets the productId outside the cartItem
     const productId = cartItem.productId;
 
-    //this variable saves the result
-    let matchingProduct;
-
-    //loop through the products array. now we check if the product id from the products array equals the product id from our cart and save it to matchingProduct variable.
-    products.forEach((product) => {
-      if (product.id === productId) {
-        matchingProduct = product;
-      }
-    });
+    const matchingProduct = getProduct(productId);
 
     //update the date using the delivery option selected
     const deliveryOptionId = cartItem.deliveryOptionId;
 
-    let deliveryOption;
+    const deliveryOption = getDeliveryOption(deliveryOptionId);
 
-    deliveryOptions.forEach((option) => {
-      if (option.id === deliveryOptionId) {
-        deliveryOption = option;
-      }
-    });
-    if (!deliveryOption) {
-      deliveryOption = deliveryOptions[0];
-    }
+
     const today = dayjs();
     const deliveryDate = today.add(deliveryOption.deliveryDays, "days");
     const dateString = deliveryDate.format("dddd, MMMM D");
@@ -137,6 +123,7 @@ export function renderOrderSummary() {
 
       container.remove();
       renderOrderSummary();
+      renderPaymentSummary();
     });
   });
 
@@ -145,8 +132,9 @@ export function renderOrderSummary() {
       const { productId, deliveryOptionId } = element.dataset;
       updateDeliveryOption(productId, deliveryOptionId);
       renderOrderSummary();
+      renderPaymentSummary();
     });
   });
 }
 
-//to update the delivery date in real time we had to enclose the whole code in a function in order to rerun it anytime we are selecting a new delivery date. it generated the whole order summary html each time the option is changed. this is a better way than using the dom. since it allows us to change the whole page not just one element
+//to update the delivery date in real time we had to enclose the whole code in a function in order to rerun it anytime we are selecting a new delivery date. it generated the whole order summary html each time the option is changed. this is a better way than using the dom. since it allows us to change the whole page not just one element. same thing for the payment summary. This process is can rerunning a function.
