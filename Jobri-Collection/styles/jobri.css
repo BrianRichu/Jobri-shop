@@ -541,7 +541,7 @@ body {
 }
 
 .category-product a:hover {
-  border-color: #000;
+  color: var(--brown-dark);
 }
 
 /* ===============================

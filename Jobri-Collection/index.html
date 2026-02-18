@@ -1,268 +1,331 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jobri Fashion Store</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jobri Fashion Store</title>
 
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-  integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-<link rel="stylesheet" href="styles/jobri.css" />
-</head>
+    <link rel="stylesheet" href="styles/jobri.css" />
+  </head>
 
-<body>
-  <!--navigation setion-->
-   <header class="site-header">
-  <div class="nav-wrapper">
+  <body>
+    <!--navigation setion-->
+    <header class="site-header">
+      <div class="nav-wrapper">
+        <!-- LOGO -->
+        <div class="nav-left">
+          <a href="index.html"
+            ><img src="images/jobri logo.jpg" alt="Jobri Collection Logo"
+          /></a>
+        </div>
 
-    <!-- LOGO -->
-    <div class="nav-left">
-      <a href="index.html"><img src="images/jobri logo.jpg" alt="Jobri Collection Logo"></a>
-    </div>
+        <!-- SEARCH (ALWAYS VISIBLE) -->
+        <div class="nav-middle">
+          <input type="search" placeholder="Search products..." />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
 
-    <!-- SEARCH (ALWAYS VISIBLE) -->
-    <div class="nav-middle">
-      <input type="search" placeholder="Search products...">
-      <i class="fa-solid fa-magnifying-glass"></i>
-    </div>
+        <!-- DESKTOP NAV -->
+        <nav class="nav-right desktop-nav">
+          <ul>
+            <li>
+              <a href="#">Sneakers</a><i class="fa-solid fa-caret-down"></i>
+            </li>
+            <li>
+              <a href="#">Watches</a><i class="fa-solid fa-caret-down"></i>
+            </li>
+            <li>
+              <a href="#">Clothing</a><i class="fa-solid fa-caret-down"></i>
+            </li>
+            <li class="cart">
+              <a href="checkout.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Cart</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
 
-    <!-- DESKTOP NAV -->
-    <nav class="nav-right desktop-nav">
+        <!-- MOBILE TOGGLE -->
+        <button class="menu-toggle" id="openMenu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- MOBILE SLIDE MENU -->
+    <aside class="mobile-menu" id="mobileMenu">
+      <button class="close-menu" id="closeMenu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
       <ul>
         <li><a href="#">Sneakers</a><i class="fa-solid fa-caret-down"></i></li>
         <li><a href="#">Watches</a><i class="fa-solid fa-caret-down"></i></li>
         <li><a href="#">Clothing</a><i class="fa-solid fa-caret-down"></i></li>
-        <li class="cart">
-          <a href="checkout.html">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span>Cart</span>
-          </a>
+        <li>
+          <a href="checkout.html">Cart</a
+          ><i class="fa-solid fa-cart-shopping"></i>
         </li>
       </ul>
-    </nav>
+    </aside>
 
-    <!-- MOBILE TOGGLE -->
-    <button class="menu-toggle" id="openMenu">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-
-  </div>
-</header>
-
-<!-- MOBILE SLIDE MENU -->
-<aside class="mobile-menu" id="mobileMenu">
-  <button class="close-menu" id="closeMenu">
-    <i class="fa-solid fa-xmark"></i>
-  </button>
-
-  <ul>
-    <li><a href="#">Sneakers</a><i class="fa-solid fa-caret-down"></i></li>
-    <li><a href="#">Watches</a><i class="fa-solid fa-caret-down"></i></li>
-    <li><a href="#">Clothing</a><i class="fa-solid fa-caret-down"></i></li>
-    <li><a href="checkout.html">Cart</a><i class="fa-solid fa-cart-shopping"></i></li>
-  </ul>
-</aside>
-
-  <!--Introduction section-->
-  <section class="middle-container">
-    <div class="intro">
-      <p>style that speaks for you</p>
-      <h2>From fresh <span class="gradient-text">kicks and clean fits</span> to statement watches</h2>
-      <p>Jobri Collection is your go to plug for all things fashion</p>
-      <a href="products.html" class="products-link"><button class="products">View Products<i class="fa-solid fa-arrow-right"></i></button></a>
-    </div>
-    <section class="slider">
+    <!--Introduction section-->
+    <section class="middle-container">
+      <div class="intro">
+        <p>style that speaks for you</p>
+        <h2>
+          From fresh <span class="gradient-text">kicks and clean fits</span> to
+          statement watches
+        </h2>
+        <p>Jobri Collection is your go to plug for all things fashion</p>
+        <a href="products.html" class="products-link"
+          ><button class="products">
+            View Products<i class="fa-solid fa-arrow-right"></i></button
+        ></a>
+      </div>
+      <section class="slider">
         <div class="slide-track">
-            <div class="slide">
-              <img src="images/converse shoes.jpg" alt="Converse Shoes">
-            </div>
-            <div class="slide">
-               <img src="images/jacket-into.jpeg" alt="Watch">
-            </div>
-            <div class="slide">
-              <img src="images/watch into.jpeg" alt="Jacket">
-            </div>
-  
-                <!-- duplicate slides for seamless looping -->
-            <div class="slide">
-              <img src="images/converse shoes.jpg" alt="Converse Shoes">
-            </div>
-            <div class="slide">
-              <img src="images/jacket-into.jpeg" alt="Watch">
-            </div>
-            <div class="slide">
-              <img src="images/watch into.jpeg" alt="Jacket">
-            </div>
+          <div class="slide">
+            <img src="images/converse shoes.jpg" alt="Converse Shoes" />
+          </div>
+          <div class="slide">
+            <img src="images/jacket-into.jpeg" alt="Watch" />
+          </div>
+          <div class="slide">
+            <img src="images/watch into.jpeg" alt="Jacket" />
+          </div>
+
+          <!-- duplicate slides for seamless looping -->
+          <div class="slide">
+            <img src="images/converse shoes.jpg" alt="Converse Shoes" />
+          </div>
+          <div class="slide">
+            <img src="images/jacket-into.jpeg" alt="Watch" />
+          </div>
+          <div class="slide">
+            <img src="images/watch into.jpeg" alt="Jacket" />
+          </div>
         </div>
+      </section>
     </section>
-  </section>
 
-
- 
-  <section class="featured-products">
-    <!--Top Products Sections-->
-    <div class="top-products-section">
-      <h1>Top Products</h1>
-      <div class="top-products">
-        <div class="top-product">
-          <img src="images/sneakers/Brown Nike sb dunks.jpeg" alt="" srcset="">
-          <p class="product-name">Nike Dunk Low "Cacao Wow" Sneakers</p>
-          <p class="product-price">ksh 3,799</p>
-        </div>
-        <div class="top-product">
-          <img src="images/clothing/black leather jacket.jpeg" alt="" srcset="">
-          <p class="product-name">Black Leather Jacket</p>
-          <p class="product-price">ksh 3,599</p>
-        </div>
-        <div class="top-product">
-          <img src="images/watches/naviforce watch.jpeg" alt="" srcset="">
-          <p class="product-name">Silver Naviforce Watch</p>
-          <p class="product-price">ksh 4,499</p>
-        </div>
-        <div class="top-product">
-          <img src="images/sneakers/knu vans.jpeg" alt="" srcset="">
-          <p class="product-name">Knu Vans Sneakers</p>
-          <p class="product-price">ksh 3,999</p>
-        </div>
-      </div>
-      <div class="top-products">
-        <div class="top-product">
-          <img src="images/sneakers/grey new balance 9060.jpeg" alt="" srcset="">
-          <p class="product-name">Grey New Balance 9060</p>
-          <p class="product-price">ksh 4,799</p>
-        </div>
-        <div class="top-product">
-          <img src="images/watches/omega automatic watch.jpeg" alt="" srcset="">
-          <p class="product-name">Omega automatic Watch</p>
-          <p class="product-price">ksh 7,999</p>
-        </div>
-        <div class="top-product">
-          <img src="images/sneakers/samba stussy.jpeg" alt="" srcset="">
-          <p class="product-name">Adidas Samba Stussy Sneakers</p>
-          <p class="product-price">ksh 3,799</p>
-        </div>
-        <div class="top-product">
-          <img src="images/kids/white kids nike sb dunks.jpeg" alt="" srcset="">
-          <p class="product-name">Kids Nike SB Dunk Low Sneakers</p>
-          <p class="product-price">ksh 3,299</p>
-        </div>
-      </div>
-
-    </div>
-
-
-    <!--featured Products Section-->
-    <div class="Categories-section">
-      <h1>Featured Categories</h1>
-      <div class="category-products">
-        <div class="category-product">
-          <img src="images/sneakers/Louis Vuitton X Nike SB Dunk Low.jpeg" alt="" srcset="">
-          <div class="category-content">
-            <p class="category-name">Sneakers</p>
-          <p class="category-descrition">Step up your footwear game with our collection of sneakers. From everyday casual to sporty performance designs, find the perfect pair that combines comfort, style, and durability.</p>
-          <a href="">View More <i class="fa-solid fa-circle-arrow-right"></i></a>
+    <section class="featured-products">
+      <!--Top Products Sections-->
+      <div class="top-products-section">
+        <h1>Top Products</h1>
+        <div class="top-products">
+          <div class="top-product">
+            <img
+              src="images/sneakers/Brown Nike sb dunks.jpeg"
+              alt=""
+              srcset=""
+            />
+            <p class="product-name">Nike Dunk Low "Cacao Wow" Sneakers</p>
+            <p class="product-price">ksh 3,799</p>
+          </div>
+          <div class="top-product">
+            <img
+              src="images/clothing/black leather jacket.jpeg"
+              alt=""
+              srcset=""
+            />
+            <p class="product-name">Black Leather Jacket</p>
+            <p class="product-price">ksh 3,599</p>
+          </div>
+          <div class="top-product">
+            <img src="images/watches/naviforce watch.jpeg" alt="" srcset="" />
+            <p class="product-name">Silver Naviforce Watch</p>
+            <p class="product-price">ksh 4,499</p>
+          </div>
+          <div class="top-product">
+            <img src="images/sneakers/knu vans.jpeg" alt="" srcset="" />
+            <p class="product-name">Knu Vans Sneakers</p>
+            <p class="product-price">ksh 3,999</p>
           </div>
         </div>
-         <div class="category-product">
-          <img src="images/watches/OFNS Couple set.jpeg" alt="" srcset="">
-          <div class="category-content">
-            <p class="category-name">Watches</p>
-          <p class="category-descrition">Timeless elegance on your wrist. Discover a range of watches that blend functionality with fashion, from classic analog designs to modern digital styles.</p>
-          <a href="">View More <i class="fa-solid fa-circle-arrow-right"></i></a>
+        <div class="top-products">
+          <div class="top-product">
+            <img
+              src="images/sneakers/grey new balance 9060.jpeg"
+              alt=""
+              srcset=""
+            />
+            <p class="product-name">Grey New Balance 9060</p>
+            <p class="product-price">ksh 4,799</p>
           </div>
-        </div>
-         <div class="category-product">
-          <img src="images/kids/kids Blue Nike Airmax Portal.jpeg" alt="" srcset="">
-          <div class="category-content">
-            <p class="category-name">Kids</p>
-          <p class="category-descrition">Fun, safe, and stylish products for children of all ages. Clothing, shoes, and accessories designed to keep your little ones comfortable and looking great.</p>
-          <a href="">View More <i class="fa-solid fa-circle-arrow-right"></i></a>
+          <div class="top-product">
+            <img
+              src="images/watches/omega automatic watch.jpeg"
+              alt=""
+              srcset=""
+            />
+            <p class="product-name">Omega automatic Watch</p>
+            <p class="product-price">ksh 7,999</p>
           </div>
-        </div>
-         <div class="category-product">
-          <img src="images/clothing/Knitted Sweater.jpeg" alt="" srcset="">
-          <div class="category-content">
-            <p class="category-name">Clothing</p>
-          <p class="category-descrition">Trendy, comfortable, and high-quality apparel for every occasion. Explore stylish outfits, casual wear, and statement pieces that fit your personality and lifestyle.</p>
-          <a href="">View More <i class="fa-solid fa-circle-arrow-right"></i></a>
+          <div class="top-product">
+            <img src="images/sneakers/samba stussy.jpeg" alt="" srcset="" />
+            <p class="product-name">Adidas Samba Stussy Sneakers</p>
+            <p class="product-price">ksh 3,799</p>
+          </div>
+          <div class="top-product">
+            <img
+              src="images/kids/white kids nike sb dunks.jpeg"
+              alt=""
+              srcset=""
+            />
+            <p class="product-name">Kids Nike SB Dunk Low Sneakers</p>
+            <p class="product-price">ksh 3,299</p>
           </div>
         </div>
       </div>
-      <a href="products.html" class="products-link"><button class="category-button">View Products <i class="fa-solid fa-right-long"></i></button></a>
-    </div>
-  </section>
 
-
- 
-  <!-- footer section -->
-  <footer class="site-footer">
-  <div class="footer-container">
-    <!-- Brand -->
-    <div class="footer-column">
-      <h3>Jobri Collection</h3>
-      <p>
-        Your go-to fashion store for sneakers, watches, clothing, and kids wear.
-        Quality, style, and affordability — all in one place.
-      </p>
-    </div>
-
-    <!-- Quick Links -->
-    <div class="footer-column">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#">Sneakers</a></li>
-        <li><a href="#">Watches</a></li>
-        <li><a href="#">Clothing</a></li>
-        <li><a href="#">Kids</a></li>
-        <li><a href="products.html" target="_blank">All Products</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact -->
-    <div class="footer-column">
-      <h4>Contact Us</h4>
-      <p><i class="fa-solid fa-phone"></i> +254 759 871 835</p>
-      <p><i class="fa-solid fa-envelope"></i> info@jobricollection.com</p>
-      <p><i class="fa-solid fa-location-dot"></i> Kenya</p>
-    </div>
-
-    <!-- Social -->
-    <div class="footer-column">
-      <h4>Follow Us</h4>
-      <div class="footer-socials">
-        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-        <a href="https://wa.me/254759871835" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
+      <!--featured Products Section-->
+      <div class="Categories-section">
+        <h1>Featured Categories</h1>
+        <div class="category-products">
+          <div class="category-product">
+            <img
+              src="images/sneakers/Louis Vuitton X Nike SB Dunk Low.jpeg"
+              alt=""
+              srcset=""
+            />
+            <div class="category-content">
+              <p class="category-name">Sneakers</p>
+              <p class="category-descrition">
+                Step up your footwear game with our collection of sneakers. From
+                everyday casual to sporty performance designs, find the perfect
+                pair that combines comfort, style, and durability.
+              </p>
+              <a href="products.html"
+                >View More <i class="fa-solid fa-circle-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="category-product">
+            <img src="images/watches/OFNS Couple set.jpeg" alt="" srcset="" />
+            <div class="category-content">
+              <p class="category-name">Watches</p>
+              <p class="category-descrition">
+                Timeless elegance on your wrist. Discover a range of watches
+                that blend functionality with fashion, from classic analog
+                designs to modern digital styles.
+              </p>
+              <a href="products.html"
+                >View More <i class="fa-solid fa-circle-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="category-product">
+            <img
+              src="images/kids/kids Blue Nike Airmax Portal.jpeg"
+              alt=""
+              srcset=""
+            />
+            <div class="category-content">
+              <p class="category-name">Kids</p>
+              <p class="category-descrition">
+                Fun, safe, and stylish products for children of all ages.
+                Clothing, shoes, and accessories designed to keep your little
+                ones comfortable and looking great.
+              </p>
+              <a href="products.html"
+                >View More <i class="fa-solid fa-circle-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="category-product">
+            <img src="images/clothing/Knitted Sweater.jpeg" alt="" srcset="" />
+            <div class="category-content">
+              <p class="category-name">Clothing</p>
+              <p class="category-descrition">
+                Trendy, comfortable, and high-quality apparel for every
+                occasion. Explore stylish outfits, casual wear, and statement
+                pieces that fit your personality and lifestyle.
+              </p>
+              <a href="products.html"
+                >View More <i class="fa-solid fa-circle-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <a href="products.html" class="products-link"
+          ><button class="category-button">
+            View Products <i class="fa-solid fa-right-long"></i></button
+        ></a>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <div class="footer-bottom">
-    <p>&copy; 2026 Jobri Collection. All rights reserved.</p>
-  </div>
-  </footer>
+    <!-- footer section -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- Brand -->
+        <div class="footer-column">
+          <h3>Jobri Collection</h3>
+          <p>
+            Your go-to fashion store for sneakers, watches, clothing, and kids
+            wear. Quality, style, and affordability — all in one place.
+          </p>
+        </div>
 
-  <!--whatsapp icon section-->
-  <a
-    href="https://wa.me/254759871835?text=Hello%20I%20would%20like%20to%20inquire%20about%20your%20products"
-    class="whatsapp-chat"
-    target="_blank"
-    aria-label="Chat with us on WhatsApp"
-  >
-    <i class="fa-brands fa-whatsapp"></i>
-    <span>Chat with us</span>
-  </a>
+        <!-- Quick Links -->
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Sneakers</a></li>
+            <li><a href="#">Watches</a></li>
+            <li><a href="#">Clothing</a></li>
+            <li><a href="#">Kids</a></li>
+            <li><a href="products.html" target="_blank">All Products</a></li>
+          </ul>
+        </div>
 
-  <script type="module" src="scripts/index.js"></script>
+        <!-- Contact -->
+        <div class="footer-column">
+          <h4>Contact Us</h4>
+          <p><i class="fa-solid fa-phone"></i> +254 759 871 835</p>
+          <p><i class="fa-solid fa-envelope"></i> info@jobricollection.com</p>
+          <p><i class="fa-solid fa-location-dot"></i> Kenya</p>
+        </div>
 
-</body>
+        <!-- Social -->
+        <div class="footer-column">
+          <h4>Follow Us</h4>
+          <div class="footer-socials">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://wa.me/254759871835" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Jobri Collection. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!--whatsapp icon section-->
+    <a
+      href="https://wa.me/254759871835?text=Hello%20I%20would%20like%20to%20inquire%20about%20your%20products"
+      class="whatsapp-chat"
+      target="_blank"
+      aria-label="Chat with us on WhatsApp"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>Chat with us</span>
+    </a>
+
+    <script type="module" src="scripts/index.js"></script>
+  </body>
 </html>
