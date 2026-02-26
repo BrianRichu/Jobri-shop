@@ -8,6 +8,8 @@ export function loadFromStorage (){
   if (!cart) {
   cart = [];
 }
+// Filter out any undefined or invalid items
+  cart = cart.filter(item => item && item.productId);
 }
 
 export function saveToLocalStorage (){
