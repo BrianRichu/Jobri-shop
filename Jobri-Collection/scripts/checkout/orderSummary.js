@@ -1,7 +1,6 @@
-import { cart, removeFromCart, updateDeliveryOption } from "../../data/cart.js";
+import { cart, removeFromCart,  } from "../../data/cart.js";
 import { products, getProduct } from "../../data/products.js";
 import {
-  deliveryOptions,
   getDeliveryOption,
   calculateDeliveryDate,
 } from "../../data/deliveryOptions.js";
@@ -54,57 +53,10 @@ export function renderOrderSummary() {
             </span>
           </div>
         </div>
-            
-
-     <!-- DELIVERY OPTIONS -->
-     <div class="delivery-options">
-       <div class="delivery-options-title">
-          Choose a delivery option:
-        </div>
-       ${deliveryOptionsHTML(matchingProduct, cartItem)}
       </div>
-    </div>
     </div>
   `;
   });
-
-  function deliveryOptionsHTML(matchingProduct, cartItem) {
-    let HTML = "";
-
-    deliveryOptions.forEach((deliveryOption) => {
-      const dateString = calculateDeliveryDate(deliveryOption);
-
-      const priceString =
-        deliveryOption.priceShillings === 0
-          ? "FREE"
-          : `ksh ${deliveryOption.priceShillings}`;
-
-      //adding a default checked delivery option
-      const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
-
-      HTML += `
-     <div class="delivery-option js-delivery-option"
-     data-product-id = "${matchingProduct.id}"
-     data-delivery-option-id = "${deliveryOption.id}">
-        <input
-          type="radio"
-          ${isChecked ? "checked" : ""}
-          class="delivery-option-input"
-            name="delivery-option-${matchingProduct.id}"
-        >
-        <div>
-          <div class="delivery-option-date">
-              ${dateString}
-          </div>
-          <div class="delivery-option-price">
-            ${priceString} - Shipping
-          </div>
-        </div>
-      </div>
-    `;
-    });
-    return HTML;
-  }
 
   document.querySelector(".js-order-summary").innerHTML = cartSummaryHTML;
 
@@ -124,15 +76,4 @@ export function renderOrderSummary() {
       renderPaymentSummary();
     });
   });
-
-  document.querySelectorAll(".js-delivery-option").forEach((element) => {
-    element.addEventListener("click", () => {
-      const { productId, deliveryOptionId } = element.dataset;
-      updateDeliveryOption(productId, deliveryOptionId);
-      renderOrderSummary();
-      renderPaymentSummary();
-    });
-  });
 }
-
-//to update the delivery date in real time we had to enclose the whole code in a function in order to rerun it anytime we are selecting a new delivery date. it generated the whole order summary html each time the option is changed. this is a better way than using the dom. since it allows us to change the whole page not just one element. same thing for the payment summary. This process is can rerunning a function.

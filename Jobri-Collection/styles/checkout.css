@@ -335,3 +335,32 @@ body{
 .products-link{
   text-decoration: none;
 }
+
+/* Delivery Options */
+.delivery-options {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.delivery-option {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.delivery-option-input {
+  margin-left: 0px;
+  cursor: pointer;
+}
+
+.delivery-option-date {
+  color: rgb(2, 2, 198);
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.delivery-option-price {
+  color: rgb(120, 120, 120);
+  font-size: 15px;
+}
