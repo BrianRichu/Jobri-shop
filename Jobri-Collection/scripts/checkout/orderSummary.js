@@ -67,12 +67,8 @@ export function renderOrderSummary() {
 
       removeFromCart(productId);
 
-      //selects the correct element we want to delete
-      const container = document.querySelector(
-        `.js-cart-item-container-${productId}`,
-      );
-
-      container.remove();
+      // Instead of just removing the container, re-render everything:
+      renderOrderSummary();
       renderPaymentSummary();
     });
   });
