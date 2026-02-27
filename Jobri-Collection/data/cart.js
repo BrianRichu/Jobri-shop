@@ -63,3 +63,5 @@ export function updateDeliveryOption(productId, deliveryOptionId){
 
   saveToLocalStorage();
 }
+
+console.log(cart)

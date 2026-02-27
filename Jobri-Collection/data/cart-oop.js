@@ -65,5 +65,3 @@ updateDeliveryOption(productId, deliveryOptionId){
 cart.loadFromStorage();
 
 cart.addToCart('p10');
-
-console.log(cart);

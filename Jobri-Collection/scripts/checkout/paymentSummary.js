@@ -8,6 +8,8 @@ function setDeliveryOptionForAll(deliveryOptionId) {
   cart.forEach((cartItem) => {
     cartItem.deliveryOptionId = deliveryOptionId;
   });
+  // Persist selected delivery option in localStorage
+  localStorage.setItem('selectedDeliveryOptionId', deliveryOptionId);
 }
 
 export function renderPaymentSummary(){
@@ -18,7 +20,15 @@ export function renderPaymentSummary(){
     paymentSummaryContainer.innerHTML = '';
     return;
   }
-  
+
+  // On first render, check localStorage for selected delivery option
+  const savedDeliveryOptionId = localStorage.getItem('selectedDeliveryOptionId');
+  if (savedDeliveryOptionId) {
+    cart.forEach((cartItem) => {
+      cartItem.deliveryOptionId = savedDeliveryOptionId;
+    });
+  }
+
   //we are calculation the total cost of the items
   let productPriceShillings = 0;
 
@@ -40,7 +50,7 @@ export function renderPaymentSummary(){
     const dateString = calculateDeliveryDate(deliveryOption);
     const priceString = deliveryOption.priceShillings === 0 ? "FREE" : `ksh ${deliveryOption.priceShillings}`;
     const isChecked = deliveryOption.id === cart[0].deliveryOptionId ? 'checked' : '';
-    
+
     deliveryOptionsHTML += `
       <div class="delivery-option js-delivery-option" data-delivery-option-id="${deliveryOption.id}">
         <input

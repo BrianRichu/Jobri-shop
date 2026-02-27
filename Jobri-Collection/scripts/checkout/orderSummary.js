@@ -9,16 +9,18 @@ import { renderPaymentSummary } from "./paymentSummary.js";
 export function renderOrderSummary() {
   let cartSummaryHTML = "";
 
-  //loop through the cart array and use each cartItem to get the other details
+  // Get persisted delivery option from localStorage if available
+  const savedDeliveryOptionId = localStorage.getItem('selectedDeliveryOptionId');
 
+  //loop through the cart array and use each cartItem to get the other details
   cart.forEach((cartItem) => {
     //this code below gets the productId outside the cartItem
     const productId = cartItem.productId;
 
     const matchingProduct = getProduct(productId);
 
-    //update the date using the delivery option selected
-    const deliveryOptionId = cartItem.deliveryOptionId;
+    // Use persisted delivery option if available
+    const deliveryOptionId = savedDeliveryOptionId || cartItem.deliveryOptionId;
 
     const deliveryOption = getDeliveryOption(deliveryOptionId);
 
