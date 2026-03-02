@@ -285,6 +285,11 @@ body{
   font-size: 18px;
 }
 
+.place-order-button:active{
+  background-color: #c8a27a;
+  transition: 0.1s ease-in-out;
+}
+
 /* =====================
    WhatsApp Floating Chat (Responsive)
 ===================== */
