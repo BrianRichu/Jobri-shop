@@ -13,11 +13,99 @@ export function getProduct(productId){
 
 export const products = [
   {
+    id: "p31",
+    image: "images/sneakers/new balance 530 gold.jpeg",
+    name: 'Gold New Balance 530 Sneakers',
+    priceShillings: 3799,
+    keywords: ["New Balance", "Sneakers"]
+  },
+  {
+    id: "p37",
+    image: "images/watches/brown leather curren watch.jpeg",
+    name: "Brown Leather Curren Watch",
+    priceShillings: 3999,
+    keywords: ["Curren", "Watches", "leather", "battery powered"]
+  },{
+    id: "p30",
+    image: "images/sneakers/jordan 3 vuelo.jpeg",
+    name: 'Air Jordan 3 Retro Vuelo Sneakers',
+    priceShillings: 4499,
+    keywords: ["Jordan", "Sneakers"]
+  },
+  {
+    id: "p38",
+    image: "images/watches/ladies square face curren gold watch.jpeg",
+    name: "Ladies Square Face Curren Gold Watch",
+    priceShillings: 3499,
+    keywords: ["Curren", "Watches", "ladies","battery powered"]
+  },{
+    id: "p29",
+    image:"images/sneakers/jordan 4 military blue.jpeg",
+    name: 'Air Jordan 4 Retro Military Blue Sneakers',
+    priceShillings: 4499,
+    keywords: ["Jordan", "Sneakers"]
+  },
+  {
+    id: "p39",
+    image: "images/watches/ladies square face curren silver watch.jpeg",
+    name: "Ladies Square Face Curren Silver Watch",
+    priceShillings: 3499,
+    keywords: ["Curren", "Watches", "ladies","battery powered"]
+  },
+  {
+    id: "p25",
+    image: "images/sneakers/black new balance 530.jpeg",
+    name: 'Black New Balance 530 Sneakers',
+    priceShillings: 3799,
+    keywords: ["New Balance", "Sneakers"]
+  },
+  {
+    id: "p26",
+    image: "images/sneakers/jordan 3 cactus jack.jpeg",
+    name: 'Black Jordan 3 Cactus Jack Sneakers',
+    priceShillings: 4499,
+    keywords: ["Jordan", "Sneakers"]
+  },
+  {
+    id: "p36",
+    image: "images/watches/casio white square face chrono watch.jpeg",
+    name: "Casio Square Face Chronograph Watch",
+    priceShillings: 3499,
+    keywords: ["Casio", "Watches", "battery powered"]
+  },
+  {
+    id: "p32",
+    image: "images/sneakers/white new balance 530.jpeg",
+    name: 'White New Balance 530 Sneakers',
+    priceShillings: 3799,
+    keywords: ["New Balance", "Sneakers"]
+  },
+  {
+    id: "p40",
+    image: "images/watches/dark tan leather curren watch.jpeg",
+    name: "Dark Tan Leather Curren Watch",
+    priceShillings: 3999,
+    keywords: ["Curren", "Watches", "leather", "battery powered"]
+  },
+  {
+    id: "p27",
+    image: "images/sneakers/jordan 4 fire red.jpeg",
+    name: 'White Jordan 4 Retro Fire Red Sneakers',
+    priceShillings: 4499,
+    keywords: ["Jordan", "Sneakers"]
+  },{
+    id: "p28",
+    image: "images/sneakers/jordan 4 pure money.jpeg",
+    name: 'Air Jordan 4 pure money sneakers',
+    priceShillings: 4499,
+    keywords: ["Jordan", "Sneakers"]
+  },
+    {
     id: "p24",
     image: "images/watches/silver naviforce watch.jpeg",
     name: 'Stainless Steel Silver Naviforce Watch',
     priceShillings: 3999,
-    keywords: ["Naviforce", "Watches"]
+    keywords: ["Naviforce", "Watches", "battery powered"]
   },
   {
     id: "p23",
@@ -25,6 +113,13 @@ export const products = [
     name: 'White Nike Airforce one low rope lace sneakers',
     priceShillings: 4299,
     keywords: ["Nike", "Sneakers"]
+  },
+  {
+    id: "p35",
+    image: "images/watches/casio green square face chrono watch.jpeg",
+    name: "Casio Square Face Chronograph Watch",
+    priceShillings: 3499,
+    keywords: ["Casio", "Watches", "battery powered"]
   },
   {
     id: "p22",
@@ -47,6 +142,13 @@ export const products = [
     keywords: ["Nike", "Sneakers"]
   },
   {
+    id: "p34",
+    image: "images/watches/blue leather curren watch.jpeg",
+    name: "Blue Leather Curren Watch",
+    priceShillings: 3999,
+    keywords: ["Curren", "Watches", "leather"]
+  },
+  {
     id: "p2",
     image: "images/clothing/black leather jacket.jpeg",
     name: "Black Leather Jacket",
@@ -59,6 +161,13 @@ export const products = [
     name: "Silver Naviforce Watch",
     priceShillings: 4499,
     keywords: ["Naviforce", "Watches"]
+  },
+  {
+    id: "p33",
+    image: "images/watches/casio black square face chrono watch.jpeg",
+    name: "Casio Square Face Chronograph Watch",
+    priceShillings: 3499,
+    keywords: ["Casio", "Watches", "battery powered"]
   },
   {
     id: "p4",
@@ -93,14 +202,14 @@ export const products = [
     image: "images/watches/Brown Megir leather chronograph.jpeg",
     name: "Brown Megir Chronograph Watch",
     priceShillings: 3999,
-    keywords: ["Megir", "Watches"]
+    keywords: ["Megir", "Watches", "battery powered"]
   },
   {
     id: "p9",
     image: "images/watches/Brown Leather automatic Patek philippe.jpeg",
     name: "Brown Automatic Patek Philippe Watch",
     priceShillings: 5999,
-    keywords: ["Patek Philippe", "Watches"]
+    keywords: ["Patek Philippe", "Watches", "automatic"]
   },
   {
     id: "p10",
@@ -121,7 +230,7 @@ export const products = [
     image: "images/watches/Daniel wellington ladies silver watch.jpeg",
     name: "Daniel Wellington Silver Ladies Watch",
     priceShillings: 3499,
-    keywords: ["Daniel Wellington", "Watches"]
+    keywords: ["Daniel Wellington", "Watches", "battery powered"]
   },
   {
     id: "p13",
@@ -135,7 +244,7 @@ export const products = [
     image: "images/watches/omega automatic watch.jpeg",
     name: "Omega Automatic Watch",
     priceShillings: 7999,
-    keywords: ["Omega", "Watches"]
+    keywords: ["Omega", "Watches", "automatic"]
   },
   {
     id: "p15",
@@ -170,7 +279,7 @@ export const products = [
     image: "images/watches/Leather Black patek Philippe automatic.jpeg",
     name: "Black Patek Philippe Automatic Watch",
     priceShillings: 6499,
-    keywords: ["Patek Philippe", "Watches"]
+    keywords: ["Patek Philippe", "Watches", "automatic"]
   },
   {
     id: "p20",
