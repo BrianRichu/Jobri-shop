@@ -1,15 +1,12 @@
-export let cart;
 
+export let cart = [];
 loadFromStorage();
 
 export function loadFromStorage (){
-  cart = JSON.parse(localStorage.getItem('cart'));
+  const storedCart = JSON.parse(localStorage.getItem('cart'));
 
-  if (!cart) {
-  cart = [];
-}
-// Filter out any undefined or invalid items
-  cart = cart.filter(item => item && item.productId);
+  // Filter out any null or malformed cart items
+  cart = Array.isArray(storedCart) ? storedCart.filter(cartItem => cartItem && cartItem.productId) : [];
 }
 
 export function saveToLocalStorage (){
@@ -17,51 +14,46 @@ export function saveToLocalStorage (){
 }
 
 export function addToCart(productId) {
-  //checking if the product is already inside the cart
-  let matchingItem;
+  loadFromStorage(); // Always get latest cart
+  let matchingItem = cart.find(cartItem => productId === cartItem.productId);
 
-  cart.forEach((cartItem) => {
-    if (productId === cartItem.productId) {
-      matchingItem = cartItem;
-    }
-  });
-
-  //if the item is in the cart increase the quantity only
   if (matchingItem) {
     matchingItem.quantity++;
-  }
-
-  //if not in the cart then create the cart item object in the cart
-  else {
+  } else {
     cart.push({
       productId,
       quantity: 1,
       deliveryOptionId : '1'
     });
   }
-
   saveToLocalStorage();
+  loadFromStorage(); // Ensure cart is up-to-date
 }
 
 export function removeFromCart(productId) {
+  loadFromStorage();
   cart = cart.filter(item => item.productId !== productId);
   saveToLocalStorage();
+  loadFromStorage();
 }
 
 
 //this function now updated the delivery date when page is refreshed
 export function updateDeliveryOption(productId, deliveryOptionId){
-  let matchingItem;
-
-  cart.forEach((cartItem) => {
-    if (productId === cartItem.productId) {
-      matchingItem = cartItem;
-    }
-  });
-
-  matchingItem.deliveryOptionId = deliveryOptionId;
-
-  saveToLocalStorage();
+  loadFromStorage();
+  let matchingItem = cart.find(cartItem => productId === cartItem.productId);
+  if (matchingItem) {
+    matchingItem.deliveryOptionId = deliveryOptionId;
+    saveToLocalStorage();
+    loadFromStorage();
+  }
 }
 
-console.log(cart)
+// Clear the cart completely
+export function clearCart() {
+  cart = [];
+  saveToLocalStorage();
+  loadFromStorage();
+}
+
+// ...existing code...

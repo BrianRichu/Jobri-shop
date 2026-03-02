@@ -1,4 +1,4 @@
-import { cart, removeFromCart,  } from "../../data/cart.js";
+import { cart, loadFromStorage, removeFromCart,  } from "../../data/cart.js";
 import { products, getProduct } from "../../data/products.js";
 import {
   getDeliveryOption,
@@ -68,6 +68,7 @@ export function renderOrderSummary() {
       const productId = link.dataset.productId;
 
       removeFromCart(productId);
+      loadFromStorage(); // Reload cart data after removal
 
       // Instead of just removing the container, re-render everything:
       renderOrderSummary();
