@@ -143,7 +143,7 @@ export const products = [
   },
   {
     id: "p34",
-    image: "images/watches/blue leather curren watch.jpeg",
+    image: "images/watches/Blue leather curren watch.jpeg",
     name: "Blue Leather Curren Watch",
     priceShillings: 3999,
     keywords: ["Curren", "Watches", "leather"]
