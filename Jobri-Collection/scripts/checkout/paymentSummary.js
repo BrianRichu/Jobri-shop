@@ -1,28 +1,33 @@
 import { cart, updateDeliveryOption } from "../../data/cart.js";
 import { getProduct } from "../../data/products.js";
-import { getDeliveryOption, deliveryOptions, calculateDeliveryDate } from "../../data/deliveryOptions.js";
+import {
+  getDeliveryOption,
+  deliveryOptions,
+  calculateDeliveryDate,
+} from "../../data/deliveryOptions.js";
 import { renderOrderSummary } from "./orderSummary.js";
-
 
 function setDeliveryOptionForAll(deliveryOptionId) {
   cart.forEach((cartItem) => {
     cartItem.deliveryOptionId = deliveryOptionId;
   });
   // Persist selected delivery option in localStorage
-  localStorage.setItem('selectedDeliveryOptionId', deliveryOptionId);
+  localStorage.setItem("selectedDeliveryOptionId", deliveryOptionId);
 }
 
-export function renderPaymentSummary(){
-  const paymentSummaryContainer = document.querySelector('.js-payment-summary');
+export function renderPaymentSummary() {
+  const paymentSummaryContainer = document.querySelector(".js-payment-summary");
 
   // Hide payment summary if cart is empty
   if (cart.length === 0) {
-    paymentSummaryContainer.innerHTML = '';
+    paymentSummaryContainer.innerHTML = "";
     return;
   }
 
   // On first render, check localStorage for selected delivery option
-  const savedDeliveryOptionId = localStorage.getItem('selectedDeliveryOptionId');
+  const savedDeliveryOptionId = localStorage.getItem(
+    "selectedDeliveryOptionId",
+  );
   if (savedDeliveryOptionId) {
     cart.forEach((cartItem) => {
       cartItem.deliveryOptionId = savedDeliveryOptionId;
@@ -45,11 +50,15 @@ export function renderPaymentSummary(){
   const totalShillings = shippingPriceShillings + productPriceShillings;
 
   // Build delivery options HTML with radio buttons
-  let deliveryOptionsHTML = '';
+  let deliveryOptionsHTML = "";
   deliveryOptions.forEach((deliveryOption) => {
     const dateString = calculateDeliveryDate(deliveryOption);
-    const priceString = deliveryOption.priceShillings === 0 ? "FREE" : `ksh ${deliveryOption.priceShillings}`;
-    const isChecked = deliveryOption.id === cart[0].deliveryOptionId ? 'checked' : '';
+    const priceString =
+      deliveryOption.priceShillings === 0
+        ? "FREE"
+        : `ksh ${deliveryOption.priceShillings}`;
+    const isChecked =
+      deliveryOption.id === cart[0].deliveryOptionId ? "checked" : "";
 
     deliveryOptionsHTML += `
       <div class="delivery-option js-delivery-option" data-delivery-option-id="${deliveryOption.id}">
@@ -85,12 +94,11 @@ export function renderPaymentSummary(){
             <div class="payment-summary-money">Ksh ${shippingPriceShillings}</div>
           </div>
 
-          <div class="payment-summary-row">
-            <div>Choose delivery option:</div>
-          </div>
-
-          <div class="delivery-options">
-            ${deliveryOptionsHTML}
+          <div class="delivery-options-section">
+           <div class="delivery-options-title">Standard Delivery Fee: </div>
+           <div class="delivery-options">
+             ${deliveryOptionsHTML}
+           </div>
           </div>
 
           <div class="payment-summary-row total-row">
@@ -101,12 +109,12 @@ export function renderPaymentSummary(){
           <button class="place-order-button button-primary">
             Place your order
           </button>
-  `
+  `;
   paymentSummaryContainer.innerHTML = paymentSummaryHTML;
 
   // Add event listeners to delivery radio buttons
-  document.querySelectorAll('.js-delivery-option').forEach((element) => {
-    element.addEventListener('click', () => {
+  document.querySelectorAll(".js-delivery-option").forEach((element) => {
+    element.addEventListener("click", () => {
       const deliveryOptionId = element.dataset.deliveryOptionId;
       setDeliveryOptionForAll(deliveryOptionId);
       renderOrderSummary();

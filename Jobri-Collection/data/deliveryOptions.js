@@ -5,17 +5,7 @@ export const deliveryOptions = [
     id: "1",
     deliveryDays: 0,
     priceShillings: 400,
-  },
-  {
-    id: "2",
-    deliveryDays: 2,
-    priceShillings: 200,
-  },
-  {
-    id: "3",
-    deliveryDays: 5,
-    priceShillings: 0,
-  },
+  }
 ];
 
 export function getDeliveryOption(deliveryOptionId) {
