@@ -15,15 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btn) {
     btn.addEventListener("click", () => {
       // Build WhatsApp message
-      let message = "Hello, I would like to place an order:%0A";
-      if (cart.length === 0) {
-        message += "%0A(No items in cart)";
-      } else {
-        cart.forEach((cartItem) => {
-          const product = getProduct(cartItem.productId);
-          message += `%0A- ${product.name} x${cartItem.quantity} ksh ${product.priceShillings})`;
-        });
-      }
+      let message = "Hello, I would like to place an order:";
       // Optionally add total price
       let total = 0;
       if (cart.length === 0) {
@@ -44,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
           message += `  Delivery:Ksh ${deliveryFee}\n`;
         });
 
-        message += `%0A%0ATotal: Ksh ${total}`;
+        message += `Total: Ksh ${total}`;
       }
 
       clearCart();
