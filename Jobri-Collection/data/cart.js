@@ -31,10 +31,29 @@ export function addToCart(productId) {
 }
 
 export function removeFromCart(productId) {
+  // Ensure cart is synced with storage
   loadFromStorage();
-  cart = cart.filter(item => item.productId !== productId);
+
+  // Find the item in the cart
+  const cartItem = cart.find(
+    item => item.productId === productId
+  );
+
+  // If item does not exist, exit early
+  if (!cartItem) return;
+
+  // Reduce quantity by 1
+  cartItem.quantity -= 1;
+
+  // If quantity reaches 0, remove the item completely
+  if (cartItem.quantity <= 0) {
+    cart = cart.filter(
+      item => item.productId !== productId
+    );
+  }
+
+  // Persist updated cart
   saveToLocalStorage();
-  loadFromStorage();
 }
 
 
