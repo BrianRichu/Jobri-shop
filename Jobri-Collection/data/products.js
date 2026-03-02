@@ -13,6 +13,55 @@ export function getProduct(productId){
 
 export const products = [
   {
+    id:"p41",
+    image:"images/sneakers/air jordan 4 retro rare air.jpeg",
+    name:'Air Jordan 4 Retro Rare Air Sneakers',
+    priceShillings: 4499,
+    keywords: ["Jordan", "Sneakers"]
+  },
+  {
+    id: "p42",
+    image:"images/sneakers/all black hermes slides.jpeg",
+    name: 'All Black Hermes Slides',
+    priceShillings: 3999,
+    keywords: ["Hermes", "Slides"]
+  },
+  {
+    id: "p43",
+    image:"images/sneakers/all black prada milano slides.jpeg",
+    name: 'All Black Prada Milano Slides',
+    priceShillings: 3999,
+    keywords: ["Prada", "Slides"]
+  },
+  {
+    id: "p44",
+    image:"images/sneakers/all black vans knu stack platform.jpeg",
+    priceShillings: 3999,
+    name: 'All Black Vans Knu Stack Platform Sneakers',
+    keywords: ["Vans", "Sneakers"]
+  },
+  {
+    id: "p45",
+    image:"images/sneakers/all white adidas stansmith.jpeg",
+    name: 'All White Adidas Stansmith Sneakers',
+    priceShillings: 3499,
+    keywords: ["Adidas", "Sneakers"]
+  },
+  {
+    id: "p46",
+    image:"images/sneakers/black and white vans off the wall slides.jpeg",
+    name: 'Black and White Vans Off The Wall Slides',
+    priceShillings: 2999,
+    keywords: ["Vans", "Slides"]
+  },
+  {
+    id: "p47",
+    image:"images/sneakers/black birkenstock zurich suede sandals.jpeg",
+    name: 'Black Birkenstock Zurich Suede Sandals',
+    priceShillings: 4299,
+    keywords: ["Birkenstock", "Sandals"]
+  },
+  {
     id: "p31",
     image: "images/sneakers/new balance 530 gold.jpeg",
     name: 'Gold New Balance 530 Sneakers',

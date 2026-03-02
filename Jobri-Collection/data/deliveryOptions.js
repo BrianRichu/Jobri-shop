@@ -1,37 +1,30 @@
+// deliveryOptions.js
 import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 
+// Single delivery option
 export const deliveryOptions = [
   {
     id: "1",
-    deliveryDays: 0,
-    priceShillings: 400,
+    deliveryDays: 0,       // days from today
+    priceShillings: 400,   // delivery fee
   }
 ];
 
+// Get the delivery option by id (fallback to first if not found)
 export function getDeliveryOption(deliveryOptionId) {
-  let deliveryOption;
-
-  deliveryOptions.forEach((option) => {
-    if (option.id === deliveryOptionId) {
-      deliveryOption = option;
-    }
-  });
-  if (!deliveryOption) {
-    deliveryOption = deliveryOptions[0];
-  }
-  return deliveryOption;
+  const option = deliveryOptions.find(opt => opt.id === deliveryOptionId);
+  return option || deliveryOptions[0];
 }
 
+// Calculate expected delivery date
 export function calculateDeliveryDate(deliveryOption) {
   const today = dayjs();
-  const deliveryDate = today.add(deliveryOption.deliveryDays, "days");
-  let dateString;
+  let deliveryDate = today.add(deliveryOption.deliveryDays, "days");
 
-  if (deliveryDate.format('dddd') === 'Sunday') {
-    dateString = deliveryDate.add(1 , "days").format('dddd, MMMM D');
-  }else{
-    dateString = deliveryDate.format('dddd, MMMM D');
+  // Skip Sundays
+  if (deliveryDate.format("dddd") === "Sunday") {
+    deliveryDate = deliveryDate.add(1, "days");
   }
 
-  return dateString;
+  return deliveryDate.format("dddd, MMMM D");
 }

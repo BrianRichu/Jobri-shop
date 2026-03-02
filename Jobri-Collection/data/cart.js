@@ -31,28 +31,20 @@ export function addToCart(productId) {
 }
 
 export function removeFromCart(productId) {
-  // Ensure cart is synced with storage
   loadFromStorage();
 
-  // Find the item in the cart
-  const cartItem = cart.find(
+  const index = cart.findIndex(
     item => item.productId === productId
   );
 
-  // If item does not exist, exit early
-  if (!cartItem) return;
+  if (index === -1) return;
 
-  // Reduce quantity by 1
-  cartItem.quantity -= 1;
+  cart[index].quantity -= 1;
 
-  // If quantity reaches 0, remove the item completely
-  if (cartItem.quantity <= 0) {
-    cart = cart.filter(
-      item => item.productId !== productId
-    );
+  if (cart[index].quantity <= 0) {
+    cart.splice(index, 1); // mutate instead of reassign
   }
 
-  // Persist updated cart
   saveToLocalStorage();
 }
 
@@ -70,9 +62,8 @@ export function updateDeliveryOption(productId, deliveryOptionId){
 
 // Clear the cart completely
 export function clearCart() {
-  cart = [];
-  saveToLocalStorage();
-  loadFromStorage();
-}
+  // Mutate existing array to preserve module reference
+  cart.length = 0;
 
-// ...existing code...
+  saveToLocalStorage();
+}
