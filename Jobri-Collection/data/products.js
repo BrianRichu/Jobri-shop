@@ -13,6 +13,83 @@ export function getProduct(productId){
 
 export const products = [
   {
+    id:"p56",
+    image:"images/sneakers/nike airmax 95 sp maniere.jpeg",
+    name:'Nike Airmax 95 SP Maniere Sneakers',
+    priceShillings: 4299,
+    keywords: ["Nike", "Sneakers", "airmax"]
+  },
+  {
+    id:"p57",
+    image:"images/sneakers/nike airmax tn pink.jpeg",
+    name:'Ladies Nike Airmax TN Pink Sneakers',
+    priceShillings: 3799,
+    keywords: ["Nike", "Sneakers", "airmax", "ladies"]
+  },
+  {
+    id:"p58",
+    image:"images/sneakers/nike airmax tn blanco.jpeg",
+    name:'Nike Airmax TN Blanco Sneakers',
+    priceShillings: 3799,
+    keywords: ["Nike", "Sneakers", "airmax"]
+  },
+  {
+    id:"p48",
+    image:"images/sneakers/black chrome hearts birkenstock closed sandals.jpeg",
+    name:'Black Chrome Hearts Birkenstock Closed Sandals',
+    priceShillings: 4299,
+    keywords: ["Birkenstock", "Sandals"]
+  },
+  {
+    id:"p55",
+    image:"images/sneakers/nike airmax tn miami vice.jpeg",
+    name:'Nike Airmax TN Miami Vice Sneakers',
+    priceShillings: 3799,
+    keywords: ["Nike", "Sneakers", "airmax"]
+  },
+  {
+    id:"p49",
+    image:"images/sneakers/black louis vuitton denim slides.jpeg",
+    name:'Black Louis Vuitton Denim Slides',
+    priceShillings: 2499,
+    keywords: ["Louis Vuitton", "Slides"]
+  },
+  {
+    id:"p50",
+    image:"images/sneakers/black oprn birkenstock sandals.jpeg",
+    name:'Black Open Birkenstock Sandals',
+    priceShillings: 4299,
+    keywords: ["Birkenstock", "Sandals"]  
+  },
+  {
+    id:"p54",
+    image:"images/sneakers/nike airmax 95 sketch with past.jpeg",
+    name:'Nike Airmax 95 Sketch With Past Sneakers',
+    priceShillings: 4299,
+    keywords: ["Nike", "Sneakers", "airmax"]
+  },
+  {
+    id:"p51",
+    image:"images/sneakers/black vans off the wall slides.jpeg",
+    name:'Black Vans Off The Wall Slides',
+    priceShillings: 2499,
+    keywords: ["Vans", "Slides"]
+  },
+  {
+    id:"p52",
+    image:"images/sneakers/ligh ash grey birkenstick closed sandals.jpeg",
+    name:'Light Ash Grey Birkenstock Closed Sandals',
+    priceShillings: 4299,
+    keywords: ["Birkenstock", "Sandals"]
+  },
+  {
+    id:"p53",
+    image:"images/sneakers/nike air jordan 1 se french blue.jpeg",
+    name:'Nike Air Jordan 1 SE French Blue Sneakers',
+    priceShillings: 4299,
+    keywords: ["Nike", "Sneakers"]
+  },
+  {
     id:"p41",
     image:"images/sneakers/air jordan 4 retro rare air.jpeg",
     name:'Air Jordan 4 Retro Rare Air Sneakers',
