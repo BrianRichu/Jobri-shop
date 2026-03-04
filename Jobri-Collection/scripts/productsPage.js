@@ -62,19 +62,36 @@ function renderPagination() {
   const totalPages = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE);
   let paginationHTML = "";
 
-  for (let i = 1; i <= totalPages; i++) {
-    paginationHTML += `
-      <button 
-        class="pagination-button ${i === currentPage ? "active" : ""}"
-        data-page="${i}">
-        ${i}
-      </button>
-    `;
+  // Always show first page
+  if (currentPage > 1) {
+    paginationHTML += `<button class="pagination-button" data-page="1">1</button>`;
+  }
+
+  // Show previous page if not the first
+  if (currentPage > 3) {
+    paginationHTML += `<span>...</span>`;
+  }
+
+  // Determine start and end page for sliding window
+  const startPage = Math.max(2, currentPage - 1);
+  const endPage = Math.min(totalPages - 1, currentPage + 1);
+
+  for (let i = startPage; i <= endPage; i++) {
+    paginationHTML += `<button class="pagination-button ${i === currentPage ? "active" : ""}" data-page="${i}">${i}</button>`;
+  }
+
+  // Show ellipsis if current page is far from last
+  if (currentPage < totalPages - 2) {
+    paginationHTML += `<span>...</span>`;
+  }
+
+  // Always show last page if more than 1
+  if (totalPages > 1) {
+    paginationHTML += `<button class="pagination-button ${currentPage === totalPages ? "active" : ""}" data-page="${totalPages}">${totalPages}</button>`;
   }
 
   document.querySelector(".js-pagination").innerHTML = paginationHTML;
 }
-
 // ---------- Global Click Handling ----------
 document.addEventListener("click", (event) => {
   // Add to Cart
