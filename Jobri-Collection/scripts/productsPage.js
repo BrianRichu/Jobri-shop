@@ -69,6 +69,11 @@ document.addEventListener("click", (event) => {
     currentPage = Number(pageButton.dataset.page);
     renderProducts();
   }
+   // Scroll to top after rendering
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // smooth scrolling
+  });
 });
 
 // ---------- Search ----------

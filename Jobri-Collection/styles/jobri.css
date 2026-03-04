@@ -53,7 +53,7 @@ body {
 
 .nav-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   gap: 16px;
   padding: 14px 20px;
@@ -70,32 +70,6 @@ body {
   height: 38px;
 }
 
-/* SEARCH */
-.nav-middle {
-  flex: 1;
-  max-width: 1200px;
-  position: relative;
-}
-
-.nav-middle input {
-  width: 100%;
-  padding: 8px 36px 8px 12px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-}
-
-.nav-middle i {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #555;
-}
-
-.site-header.shrink .nav-middle input {
-  padding: 6px 34px 6px 10px;
-  font-size: 14px;
-}
 
 /* DESKTOP NAV */
 .desktop-nav ul {
@@ -110,80 +84,6 @@ body {
   font-weight: 600;
 }
 
-/* TOGGLE BUTTON */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-/* =====================
-   MOBILE MENU
-   ===================== */
-
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 85%;
-  height: 100vh;
-  background: #ffffff;
-  z-index: 2000;
-  padding: 80px 30px;
-  transition: left 0.35s ease;
-}
-
-.mobile-menu.active {
-  left: 0;
-}
-
-.mobile-menu ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  text-align: center;
-}
-
-.mobile-menu a {
-  text-decoration: none;
-  font-size: 22px;
-  font-weight: 700;
-  color: #111;
-}
-
-.close-menu {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  font-size: 26px;
-  cursor: pointer;
-}
-
-/* =====================
-   RESPONSIVE
-   ===================== */
-
-@media (max-width: 768px) {
-  .desktop-nav {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-wrapper {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 10px;
-  }
-}
 /* =====================
    Hero / Intro Section
 ===================== */
