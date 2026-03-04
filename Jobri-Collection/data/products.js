@@ -43,7 +43,7 @@ export const products = [
   },
   {
     id: "p55",
-    image: "images/sneakers/nike airmax tn miami vice.jpeg",
+    image: "images/sneakers/Nike airmax tn miami vice.jpeg",
     name: "Nike Airmax TN Miami Vice Sneakers",
     priceShillings: 3799,
     keywords: ["Nike", "Sneakers", "airmax"],
