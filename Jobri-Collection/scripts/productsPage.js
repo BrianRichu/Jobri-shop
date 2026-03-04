@@ -1,10 +1,7 @@
 import { products } from "../data/products.js";
 import { addToCart } from "../data/cart.js";
 
-const PRODUCTS_PER_PAGE = 24;
 
-let currentPage = 1;
-let filteredProducts = [...products];
 const openMenu = document.getElementById("openMenu");
 const closeMenu = document.getElementById("closeMenu");
 const mobileMenu = document.getElementById("mobileMenu");
@@ -30,7 +27,28 @@ window.addEventListener("scroll", () => {
 });
 
 // ---------- Render Products ----------
+// ===============================
+// CONFIG
+// ===============================
+const PRODUCTS_PER_PAGE = 16;
+
+// Restore saved page or default to 1
+let currentPage = Number(localStorage.getItem("currentPage")) || 1;
+let filteredProducts = [...products];
+
+
+// ===============================
+// RENDER PRODUCTS
+// ===============================
 function renderProducts() {
+  const totalPages = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE);
+
+  // Safety reset if saved page is invalid
+  if (currentPage > totalPages) {
+    currentPage = 1;
+    localStorage.setItem("currentPage", currentPage);
+  }
+
   const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
   const endIndex = startIndex + PRODUCTS_PER_PAGE;
 
@@ -41,7 +59,8 @@ function renderProducts() {
   productsToDisplay.forEach((product) => {
     productsHTML += `
       <div class="top-product">
-        <img src="${product.image}" loading="lazy" onclick="window.location='productDetail.html?id=${product.id}'">
+        <img src="${product.image}" loading="lazy"
+          onclick="window.location='productDetail.html?id=${product.id}'">
         <p class="product-name">${product.name}</p>
         <p class="product-price">ksh ${product.priceShillings}</p>
         <button 
@@ -49,7 +68,8 @@ function renderProducts() {
           data-product-id="${product.id}">
           Add to Cart
         </button>
-      </div>`;
+      </div>
+    `;
   });
 
   document.querySelector(".js-top-products").innerHTML = productsHTML;
@@ -57,41 +77,99 @@ function renderProducts() {
   renderPagination();
 }
 
-// ---------- Render Pagination ----------
+
+// ===============================
+// RENDER PAGINATION
+// ===============================
 function renderPagination() {
   const totalPages = Math.ceil(filteredProducts.length / PRODUCTS_PER_PAGE);
+
+  if (totalPages <= 1) {
+    document.querySelector(".js-pagination").innerHTML = "";
+    return;
+  }
+
   let paginationHTML = "";
 
-  // Always show first page
-  if (currentPage > 1) {
-    paginationHTML += `<button class="pagination-button" data-page="1">1</button>`;
-  }
+  // If small page count → show all
+  if (totalPages <= 5) {
+    for (let i = 1; i <= totalPages; i++) {
+      paginationHTML += `
+        <button class="pagination-button ${i === currentPage ? "active" : ""}" 
+          data-page="${i}">
+          ${i}
+        </button>`;
+    }
+  } else {
 
-  // Show previous page if not the first
-  if (currentPage > 3) {
-    paginationHTML += `<span>...</span>`;
-  }
+    // Always show first page
+    paginationHTML += `
+      <button class="pagination-button ${currentPage === 1 ? "active" : ""}" 
+        data-page="1">
+        1
+      </button>`;
 
-  // Determine start and end page for sliding window
-  const startPage = Math.max(2, currentPage - 1);
-  const endPage = Math.min(totalPages - 1, currentPage + 1);
+    // Left ellipsis
+    if (currentPage > 3) {
+      paginationHTML += `<span class="ellipsis">...</span>`;
+    }
 
-  for (let i = startPage; i <= endPage; i++) {
-    paginationHTML += `<button class="pagination-button ${i === currentPage ? "active" : ""}" data-page="${i}">${i}</button>`;
-  }
+    // Sliding window
+    const startPage = Math.max(2, currentPage - 1);
+    const endPage = Math.min(totalPages - 1, currentPage + 1);
 
-  // Show ellipsis if current page is far from last
-  if (currentPage < totalPages - 2) {
-    paginationHTML += `<span>...</span>`;
-  }
+    for (let i = startPage; i <= endPage; i++) {
+      paginationHTML += `
+        <button class="pagination-button ${i === currentPage ? "active" : ""}" 
+          data-page="${i}">
+          ${i}
+        </button>`;
+    }
 
-  // Always show last page if more than 1
-  if (totalPages > 1) {
-    paginationHTML += `<button class="pagination-button ${currentPage === totalPages ? "active" : ""}" data-page="${totalPages}">${totalPages}</button>`;
+    // Right ellipsis
+    if (currentPage < totalPages - 2) {
+      paginationHTML += `<span class="ellipsis">...</span>`;
+    }
+
+    // Always show last page
+    paginationHTML += `
+      <button class="pagination-button ${currentPage === totalPages ? "active" : ""}" 
+        data-page="${totalPages}">
+        ${totalPages}
+      </button>`;
   }
 
   document.querySelector(".js-pagination").innerHTML = paginationHTML;
 }
+
+
+// ===============================
+// PAGINATION CLICK HANDLER
+// ===============================
+document.querySelector(".js-pagination").addEventListener("click", (e) => {
+  const button = e.target.closest(".pagination-button");
+  if (!button) return;
+
+  currentPage = Number(button.dataset.page);
+
+  // Save to localStorage
+  localStorage.setItem("currentPage", currentPage);
+
+  renderProducts();
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+
+// ===============================
+// INITIAL LOAD
+// ===============================
+renderProducts();
+
+
 // ---------- Global Click Handling ----------
 document.addEventListener("click", (event) => {
   // Add to Cart
