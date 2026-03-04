@@ -33,3 +33,20 @@ if (!productId) {
     });
   }
 }
+
+// Accordion toggle for FAQs
+document.querySelectorAll(".faq-question").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const answer = btn.nextElementSibling;
+    const plusSign = btn.querySelector("span");
+
+    // Toggle visibility
+    if (answer.style.display === "block") {
+      answer.style.display = "none";
+      plusSign.textContent = "+";
+    } else {
+      answer.style.display = "block";
+      plusSign.textContent = "−"; // minus sign when open
+    }
+  });
+});
