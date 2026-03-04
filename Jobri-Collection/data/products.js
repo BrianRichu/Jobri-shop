@@ -10,6 +10,54 @@ export function getProduct(productId) {
 
 export const products = [
   {
+  id: "p59",
+  image: "images/sneakers/nike airmax tn bone olive green.jpeg",
+  name: "Nike Airmax TN Bone Olive Green Sneakers",
+  priceShillings: 3799,
+  keywords: ["Nike", "Sneakers", "airmax"],
+  description: "The Nike Airmax TN Bone Olive Green Sneakers combine modern street style with reliable performance comfort. Built with Tuned Air cushioning, they provide responsive support and shock absorption for daily wear. The neutral bone base is complemented by olive green accents, creating a clean yet distinctive look that pairs easily with jeans, joggers, or casual outfits. The breathable mesh upper promotes airflow while structured overlays enhance durability and stability. A lightweight midsole reduces foot fatigue, making the shoe suitable for long hours on your feet. Finished with a durable rubber outsole for dependable traction, this model balances comfort, function, and bold design for everyday use."
+},
+{
+  id: "p60",
+  image: "images/sneakers/nike airmax tn pacific moss.jpeg",
+  name: "Nike Airmax TN Pacific Moss Sneakers",
+  priceShillings: 3799,
+  keywords: ["Nike", "Sneakers", "airmax"],
+  description: "The Nike Airmax TN Pacific Moss Sneakers deliver a confident look supported by Tuned Air cushioning technology. Designed for comfort and durability, the breathable mesh upper allows airflow while synthetic overlays provide structure and long-term support. The Pacific Moss colorway adds an earthy tone that stands out without being overwhelming, making it easy to style with everyday outfits. The responsive midsole absorbs impact effectively, helping reduce strain during extended wear. A durable rubber outsole ensures grip and stability across different surfaces. Ideal for streetwear enthusiasts and casual wearers alike, this sneaker blends performance engineering with versatile design."
+},
+{
+  id: "p61",
+  image: "images/sneakers/nike airmax Tn red.jpeg",
+  name: "Nike Airmax TN Red Sneakers",
+  priceShillings: 3799,
+  keywords: ["Nike", "Sneakers", "airmax"],
+  description: "The Nike Airmax TN Red Sneakers are built for those who prefer bold footwear with reliable comfort. Featuring signature Tuned Air cushioning, this model delivers responsive support and impact absorption throughout the day. The breathable mesh upper keeps airflow consistent, while reinforced overlays maintain structure and durability. Its vibrant red finish makes a strong style statement, pairing well with neutral outfits or sporty looks. The cushioned midsole enhances stability, and the rubber outsole provides dependable traction. Combining athletic heritage with modern street appeal, this sneaker is ideal for daily wear and standout styling."
+},
+{
+  id: "p62",
+  image: "images/sneakers/white and black prada milano slides.jpeg",
+  name: "White and Black Prada Milano Slides",
+  priceShillings: 3999,
+  keywords: ["Prada", "Slides"],
+  description: "The White and Black Prada Milano Slides offer a sleek and minimal design suited for relaxed wear. The clean white base combined with black detailing creates a sharp, modern aesthetic that works well with casual outfits. Designed for convenience, the slip-on structure ensures easy wear while the contoured footbed provides everyday comfort. Lightweight materials reduce pressure on the feet, making them ideal for home use, travel, or quick outings. The durable sole enhances grip and stability on smooth surfaces. These slides deliver a balance of comfort, simplicity, and refined styling."
+},
+{
+  id: "p63",
+  image: "images/sneakers/white converse chuck 70.jpeg",
+  name: "White Converse Chuck 70 Sneakers",
+  priceShillings: 3999,
+  keywords: ["Converse", "Sneakers"],
+  description: "The White Converse Chuck 70 Sneakers upgrade a classic silhouette with improved comfort and durability. Crafted with premium canvas, this model offers breathability while maintaining structure. The thicker sole and enhanced cushioning provide better support compared to standard versions, reducing foot fatigue during long wear. Its clean white finish makes it highly versatile, pairing effortlessly with denim, trousers, or casual streetwear. Reinforced stitching increases longevity, while the rubber outsole ensures reliable grip. A timeless design with modern comfort updates, the Chuck 70 remains a dependable everyday essential."
+},
+{
+  id: "p64",
+  image: "images/sneakers/white vans off the wall slides.jpeg",
+  name: "White Vans Off The Wall Slides",
+  priceShillings: 2499,
+  keywords: ["Vans", "Slides"],
+  description: "The White Vans Off The Wall Slides provide lightweight comfort in a clean, sporty design. Featuring signature Vans branding, these slides are easy to wear and suitable for relaxed settings. The cushioned footbed enhances comfort, while the secure strap design ensures a stable fit without restricting movement. Their minimal white finish allows effortless pairing with shorts, joggers, or casual outfits. The durable outsole adds stability on smooth surfaces. Designed for convenience and everyday comfort, these slides are a practical addition to any casual footwear collection."
+},
+  {
     id: "p56",
     image: "images/sneakers/nike airmax 95 sp maniere.jpeg",
     name: "Nike Airmax 95 SP Maniere Sneakers",
