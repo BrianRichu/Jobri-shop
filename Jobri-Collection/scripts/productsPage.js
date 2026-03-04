@@ -18,7 +18,7 @@ function renderProducts() {
   productsToDisplay.forEach((product) => {
     productsHTML += `
       <div class="top-product">
-        <img src="${product.image}" loading="lazy">
+        <img src="${product.image}" loading="lazy" onclick="window.location='productDetail.html?id=${product.id}'">
         <p class="product-name">${product.name}</p>
         <p class="product-price">ksh ${product.priceShillings}</p>
         <button 

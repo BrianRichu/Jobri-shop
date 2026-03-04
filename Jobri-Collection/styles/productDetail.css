@@ -1,0 +1,119 @@
+:root {
+  --brown-dark: #2b1e1a;
+  --brown-accent: #c8a27a;
+  --bg-warm: #faf7f4;
+  --text-main: #1f1f1f;
+  --text-muted: #7a6a60;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-warm);
+}
+
+
+/* ---------- Main Container ---------- */
+.product-detail-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* ---------- Product Image ---------- */
+.product-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* ---------- Product Info ---------- */
+.product-info {
+  flex: 1;
+}
+
+.product-info .product-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.product-info .product-price {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.add-cart-button {
+  background-color: #2b1e1a;
+  color: #fff;
+  height: 36px;
+  width: 100%;
+  border-radius: 18px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+.add-cart-button:active{
+  background-color: var(--brown-accent);
+  transition: 0.1s ease-in-out;
+}
+/* ---------- Description ---------- */
+.product-description {
+  max-width: 1200px;
+  margin: 20px auto 60px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.product-description h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.product-description p {
+  line-height: 1.6;
+  font-size: 30px
+  color: var(--text-muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .product-detail-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 10px;
+  }
+
+  .product-info .product-name {
+    font-size: 1.5rem;
+  }
+
+  .product-info .product-price {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .product-info .product-name {
+    font-size: 1.2rem;
+  }
+
+  .product-info .product-price {
+    font-size: 1.1rem;
+  }
+}
