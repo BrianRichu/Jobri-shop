@@ -5,6 +5,29 @@ const PRODUCTS_PER_PAGE = 24;
 
 let currentPage = 1;
 let filteredProducts = [...products];
+const openMenu = document.getElementById("openMenu");
+const closeMenu = document.getElementById("closeMenu");
+const mobileMenu = document.getElementById("mobileMenu");
+const header = document.querySelector(".site-header");
+
+/* Open mobile menu */
+openMenu.addEventListener("click", () => {
+  mobileMenu.classList.add("active");
+});
+
+/* Close mobile menu */
+closeMenu.addEventListener("click", () => {
+  mobileMenu.classList.remove("active");
+});
+
+/* Shrink header on scroll */
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 80) {
+    header.classList.add("shrink");
+  } else {
+    header.classList.remove("shrink");
+  }
+});
 
 // ---------- Render Products ----------
 function renderProducts() {
@@ -54,7 +77,6 @@ function renderPagination() {
 
 // ---------- Global Click Handling ----------
 document.addEventListener("click", (event) => {
-
   // Add to Cart
   const addButton = event.target.closest(".js-add-to-cart");
   if (addButton) {
@@ -69,10 +91,10 @@ document.addEventListener("click", (event) => {
     currentPage = Number(pageButton.dataset.page);
     renderProducts();
   }
-   // Scroll to top after rendering
+  // Scroll to top after rendering
   window.scrollTo({
     top: 0,
-    behavior: 'smooth' // smooth scrolling
+    behavior: "smooth", // smooth scrolling
   });
 });
 
@@ -88,7 +110,7 @@ if (searchInput) {
       const keywordMatch =
         product.keywords &&
         product.keywords.some((keyword) =>
-          keyword.toLowerCase().includes(query)
+          keyword.toLowerCase().includes(query),
         );
 
       return nameMatch || keywordMatch;

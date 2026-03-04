@@ -34,6 +34,16 @@ if (!productId) {
   }
 }
 
+const header = document.querySelector('.js-header');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 150) {
+    header.classList.add('shrink');
+  } else {
+    header.classList.remove('shrink');
+  }
+});
+
 // Accordion toggle for FAQs
 document.querySelectorAll(".faq-question").forEach((btn) => {
   btn.addEventListener("click", () => {

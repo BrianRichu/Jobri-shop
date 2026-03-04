@@ -31,7 +31,7 @@
         <nav class="nav-right desktop-nav">
           <ul>
             <li>
-              <i class="fa-solid fa-phone-volume"></i>  
+              <i class="fa-solid fa-phone-volume"></i>
             </li>
             <p>+254 759 871 835</p>
             <li class="cart">
@@ -44,7 +44,6 @@
         </nav>
       </div>
     </header>
-    
 
     <!--Introduction section-->
     <section class="middle-container">
@@ -294,6 +293,16 @@
       <span>Chat with us</span>
     </a>
 
-    <script type="module" src="scripts/index.js"></script>
+    <script>
+      const header = document.querySelector(".site-header");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 150) {
+          header.classList.add("shrink");
+        } else {
+          header.classList.remove("shrink");
+        }
+      });
+    </script>
   </body>
 </html>
