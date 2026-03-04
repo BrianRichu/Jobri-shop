@@ -206,7 +206,7 @@ body {
 /* Small Phones */
 @media (max-width: 480px) {
   .top-products {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
